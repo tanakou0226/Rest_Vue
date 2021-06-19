@@ -15,11 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url, include
-#from django.urls import path
+from django.urls import path
 from teams_app.urls import router as team_router
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     # team.urlsをincludeする
-    url(r'^api/', include(team_router.urls)),
+    path('api/', include(team_router.urls)),
 ]

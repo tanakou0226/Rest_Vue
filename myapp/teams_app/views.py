@@ -10,3 +10,5 @@ from .serializer import TeamSerializer
 class TeamViewSet(viewsets.ModelViewSet):
     queryset = Teams.objects.all()
     serializer_class = TeamSerializer
+
+    lookup_field = "name"
