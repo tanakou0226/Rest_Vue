@@ -18,8 +18,11 @@ from django.conf.urls import url, include
 from django.urls import path
 from teams_app.urls import router as team_router
 
+from teams_app import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # team.urlsをincludeする
     path('api/', include(team_router.urls)),
+     path("", views.index, name="index"),
 ]
